@@ -217,5 +217,19 @@
     }
   }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
   document.querySelectorAll("main > section").forEach(section => observer.observe(section));
+  const hnswFrame = document.querySelector(".hnsw-demo iframe");
+  if (hnswFrame) {
+    const sendVisibility = () => {
+      const bounds = hnswFrame.getBoundingClientRect();
+      hnswFrame.contentWindow?.postMessage({
+        type: "hnsw-visibility",
+        visible: !document.hidden && bounds.bottom > 76 && bounds.top < innerHeight
+      }, new URL(hnswFrame.src).origin);
+    };
+    const frameObserver = new IntersectionObserver(sendVisibility, { threshold: 0 });
+    frameObserver.observe(hnswFrame);
+    hnswFrame.addEventListener("load", sendVisibility);
+    document.addEventListener("visibilitychange", sendVisibility);
+  }
   render();
 })();

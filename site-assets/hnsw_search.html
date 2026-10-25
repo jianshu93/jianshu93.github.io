@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph-based genome sketch vector similarity search</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    body { color: #fff; font-family: Helvetica, Arial, sans-serif; }
+    #stage { position: absolute; width: 800px; height: 480px; transform-origin: top left; }
+    #loading { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; padding: 24px; color: #c7d4df; font-size: 13px; }
+    #loading[hidden] { display: none; }
+    #loading a { display: block; color: #d7eaff; margin-top: 12px; }
+    #feder-timer [role="button"] { cursor: pointer; }
+    #feder-timer [role="button"]:focus-visible { outline: 2px solid #fffc85; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div id="loading" role="status">Loading HNSW search</div>
+  <div id="stage" aria-label="Animated HNSW graph search"></div>
+  <script type="module">
+    // Adapted from the supplied hnsw_search.html using its original Feder renderer.
+    import { FederView } from "./hnsw/feder-1.0.7.mjs";
+
+    const stage = document.querySelector("#stage");
+    const loading = document.querySelector("#loading");
+    let data;
+    let renderer;
+    let timer;
+    let frameIndex = 0;
+    let completedAt = null;
+    let parentVisible = true;
+    let suspended = false;
+
+    const resize = () => {
+      const scale = Math.min(innerWidth / 800, innerHeight / 480);
+      stage.style.transform = "scale(" + scale + ")";
+      stage.style.left = ((innerWidth - 800 * scale) / 2) + "px";
+      stage.style.top = ((innerHeight - 480 * scale) / 2) + "px";
+    };
+    const syncVisibility = () => {
+      if (!timer) return;
+      const visible = parentVisible && !document.hidden;
+      if (!visible && timer.isPlaying) {
+        timer.stop();
+        suspended = true;
+      } else if (visible && suspended) {
+        timer.start();
+        suspended = false;
+      }
+    };
+    window.addEventListener("resize", resize);
+    document.addEventListener("visibilitychange", syncVisibility);
+    window.addEventListener("message", event => {
+      if (event.source !== window.parent || event.data?.type !== "hnsw-visibility") return;
+      parentVisible = Boolean(event.data.visible);
+      syncVisibility();
+    });
+    resize();
+
+    function renderFrame() {
+      if (timer?.isPlaying) timer.stop();
+      const frame = structuredClone(data.frames[frameIndex]);
+      renderer = new FederView(frame, {
+        width: 800,
+        height: 480,
+        canvasScale: 2,
+        staticPanelWidth: 190
+      });
+      stage.replaceChildren(renderer.node);
+      timer = renderer.view.timer;
+      completedAt = null;
+      suspended = false;
+      const controls = stage.querySelector("#feder-timer");
+      const play = controls.children[0];
+      const restart = controls.children[2];
+      for (const control of [play, restart]) {
+        control.setAttribute("role", "button");
+        control.setAttribute("tabindex", "0");
+      }
+      restart.setAttribute("aria-label", "Replay animation");
+      const originalPlay = timer.playCallback;
+      const originalPause = timer.pauseCallback;
+      timer.playCallback = () => {
+        originalPlay();
+        play.setAttribute("aria-label", "Pause animation");
+        document.documentElement.dataset.playback = "playing";
+      };
+      timer.pauseCallback = () => {
+        originalPause();
+        play.setAttribute("aria-label", "Play animation");
+        document.documentElement.dataset.playback = "paused";
+      };
+      play.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          timer.playPause();
+        }
+      });
+      restart.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          timer.restart();
+        }
+      });
+      renderer.node.querySelector("canvas").setAttribute("aria-label", "Hierarchical graph traversal");
+      renderer.render();
+      loading.hidden = true;
+      document.documentElement.dataset.ready = "true";
+      syncVisibility();
+    }
+
+    try {
+      const response = await fetch("./hnsw/search-layouts.json");
+      if (!response.ok) throw new Error("Search data unavailable");
+      data = await response.json();
+      renderFrame();
+      setInterval(() => {
+        if (!timer || !parentVisible || document.hidden || timer.isPlaying || suspended) return;
+        if (timer.currentT < timer.duration) return;
+        if (completedAt === null) completedAt = performance.now();
+        if (performance.now() - completedAt > 1600) {
+          frameIndex = (frameIndex + 1) % data.frames.length;
+          renderFrame();
+        }
+      }, 350);
+    } catch (error) {
+      loading.replaceChildren(document.createTextNode("HNSW visualization unavailable."));
+      const paper = document.createElement("a");
+      paper.href = "https://doi.org/10.1093/nar/gkae609";
+      paper.target = "_blank";
+      paper.rel = "noopener";
+      paper.textContent = "GSearch paper";
+      loading.append(paper);
+      document.documentElement.dataset.ready = "error";
+      console.error(error);
+    }
+  </script>
+</body>
+</html>

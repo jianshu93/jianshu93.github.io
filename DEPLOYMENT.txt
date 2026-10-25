@@ -8,7 +8,8 @@ VIEW THE WEBSITE
 Open index.html in a web browser. No server, framework, or account is needed
 to view this package. Publication search, filters, and citations run locally.
 Copying a citation may require localhost or HTTPS; downloading a .bib works
-without clipboard permissions.
+without clipboard permissions. The HNSW animation loads from the published
+homepage so it can also play when index.html is opened as a local file.
 
 GITHUB PAGES
 Repository: https://github.com/jianshu93/jianshu93.github.io
@@ -42,4 +43,9 @@ CONTENT AND ASSETS
 Research content and dates: Jianshu Zhao's updated CV.
 Portrait: the laboratory photograph supplied by Jianshu Zhao.
 Icons: Lucide, under its ISC license (site-assets/ICONS-LICENSE.txt).
-No analytics, tracking, external font requests, or remote runtime dependencies.
+Rust artwork: see site-assets/RUST-ARTWORK-LICENSES.txt.
+HNSW animation: adapted from the supplied hnsw_search.html, using Feder 1.0.7
+by Zilliz (Apache-2.0). The original HNSW index is used only to precompute
+three traversal layouts; visitors do not download the 36 MB source index.
+Animation files are in site-assets/hnsw/ and site-assets/hnsw_search.html.
+No analytics, tracking, external font requests, or third-party runtime requests.

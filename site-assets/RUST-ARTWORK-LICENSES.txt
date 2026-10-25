@@ -1,0 +1,16 @@
+Rust logo
+Source: https://github.com/rust-lang/rust-artwork/blob/main/logo/rusty/rust-logo-512x512.png
+Credit: The Rust Project.
+License: Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+The source artwork is unmodified; it is displayed at a smaller size.
+Original licensing information:
+https://github.com/rust-lang/rust-artwork/blob/main/logo/README.md
+
+Ferris
+Source: https://github.com/rust-lang/rust-artwork/blob/main/mascot/ferris-flat-happy.svg
+Credit: Karen Rustad Tolva, https://rustacean.net/
+The artist has waived copyright and related rights to Ferris.
+The source artwork is unmodified; it is displayed at a smaller size.
+Original licensing information:
+https://github.com/rust-lang/rust-artwork/blob/main/mascot/README.md
