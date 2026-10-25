@@ -25,7 +25,7 @@ https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a
 FUTURE CHANGES
 - Biography, education, profile text, software, and contact: index.html.
 - Colors, fonts, and responsive layout: styles.css.
-- Portrait: replace site-assets/profile.jpg.
+- Portrait: replace site-assets/profile-lab.jpg.
 - Downloadable CV: replace site-assets/Jianshu_Zhao_CV.pdf.
 - Bibliography: edit site-assets/publications.bib.
 
@@ -40,6 +40,6 @@ adjusted in scripts/update-publications.mjs before running it.
 
 CONTENT AND ASSETS
 Research content and dates: Jianshu Zhao's updated CV.
-Portrait: Jianshu Zhao's existing public GitHub profile image.
+Portrait: the laboratory photograph supplied by Jianshu Zhao.
 Icons: Lucide, under its ISC license (site-assets/ICONS-LICENSE.txt).
 No analytics, tracking, external font requests, or remote runtime dependencies.

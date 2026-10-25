@@ -46,7 +46,8 @@ strong { font-weight: 600; }
 .menu-toggle { display: none !important; }
 .page-layout { max-width: 1160px; padding: 64px 28px 0; margin: 0 auto; display: grid; grid-template-columns: 264px minmax(0, 1fr); gap: 72px; align-items: start; }
 .profile { position: sticky; top: 126px; text-align: center; }
-.profile-photo { display: block; width: 208px; height: 208px; aspect-ratio: 1; margin: 0 auto 23px; border-radius: 50%; object-fit: cover; }
+.profile-photo-frame { width: 208px; height: 208px; aspect-ratio: 1; margin: 0 auto 23px; border-radius: 50%; overflow: hidden; }
+.profile-photo { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.85); transform-origin: 100% 0%; }
 .profile h1 { font-size: 34px; margin-bottom: 10px; }
 .profile-title { font-size: 17px; color: #505752; line-height: 1.5; margin-bottom: 16px; }
 .profile-institution { font: 18px/1.45 var(--serif); color: var(--accent); margin-bottom: 9px; }
@@ -164,7 +165,7 @@ dialog::backdrop { background: rgba(18,30,24,.35); }
 @media (min-width: 1500px) { .page-layout { padding-top: 76px; } }
 @media (max-width: 1050px) {
   .page-layout { grid-template-columns: 232px minmax(0,1fr); gap: 42px; }
-  .profile-photo { width: 188px; height: 188px; }
+  .profile-photo-frame { width: 188px; height: 188px; }
   .profile h1 { font-size: 30px; }
   .profile-title { font-size: 15px; }
   .navigation-links { gap: 20px; }
@@ -178,7 +179,7 @@ dialog::backdrop { background: rgba(18,30,24,.35); }
   .navigation-links .nav-cv { padding-left: 15px; }
   .page-layout { padding: 42px 24px 0; display: block; max-width: 740px; }
   .profile { position: static; margin-bottom: 48px; }
-  .profile-photo { width: 180px; height: 180px; margin-bottom: 19px; }
+  .profile-photo-frame { width: 180px; height: 180px; margin-bottom: 19px; }
   .profile h1 { font-size: 32px; }
   .profile-institution br { display: none; }
   .profile-title { margin-bottom: 8px; }
@@ -202,7 +203,7 @@ dialog::backdrop { background: rgba(18,30,24,.35); }
   .navigation-links .nav-cv { padding-left: 0; border: 0; }
   .page-layout { padding: 32px 23px 0; }
   .profile { margin-bottom: 38px; }
-  .profile-photo { width: 158px; height: 158px; margin-bottom: 17px; }
+  .profile-photo-frame { width: 158px; height: 158px; margin-bottom: 17px; }
   .profile h1 { font-size: 30px; }
   .profile-title { font-size: 15px; }
   .profile-institution { font-size: 17px; }
