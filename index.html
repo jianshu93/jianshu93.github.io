@@ -1,5 +1,156 @@
-My name is Jianshu Zhao, currently a bioinformatic Ph.D student at Center for Bioinformatics and Computational Biology, Georgia Institute of Technology, Atlanta.
-Before I came to georgia tech, I did my Masters at Tsinghua University, Beijing, China. Being a lover of microbiology, I worked with Prof. Yunfeng Yang and Prof. Jizhong Zhou for my masters.
-Now I am working with Prof. Kostas Konstantidinis, studying enironmental microbial genomics. As a bioinfomatician, I develop bioinformatic tools to better understand large scale DNA and RNA sequencing data and try to understand the complexity of natural microbial communities.
-I am extremely intereted in understanding the unusual biology of bacteria and archaea in extreme environment such as deep sea sedment (larger than 6000 meters), Tibetan Plateau and Tundra ecosystems. For the computational biology related work, I am very interested in classification problems for microbial genomes. I am now studying fast ANN (approximation nearest neighbor) algorithms such as Hierarchical Navigable Small World Graphs (HNSW) to accelerate search for close genomes in very large database.
-I am a python/R and Rust person and I work on both Linux and MacOS. I love swimming, video gaming, hiking and coding. Contact me at jianshu.zhao@gatech.edu
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Jianshu Zhao develops algorithms and open-source software for large-scale genomics, metagenomics, and microbiome research. Publications, research software, and CV.">
+  <meta name="author" content="Jianshu Zhao">
+  <meta property="og:title" content="Jianshu Zhao | Computational Microbiology">
+  <meta property="og:description" content="Algorithms, data structures, and open-source software for understanding microbial life.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://jianshu93.github.io/">
+  <meta property="og:image" content="https://jianshu93.github.io/site-assets/profile.jpg">
+  <link rel="canonical" href="https://jianshu93.github.io/">
+  <link rel="icon" href="site-assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Jianshu Zhao | Computational Microbiology</title>
+  <script src="site-assets/publications.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol><symbol id="graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol><symbol id="code-xml" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol><symbol id="fingerprint" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol><symbol id="download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol><symbol id="search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></symbol><symbol id="menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol><symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol><symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol><symbol id="copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol><symbol id="file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol><symbol id="map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol><symbol id="arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol><symbol id="chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol></svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="wordmark" href="#about">Jianshu Zhao<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation-links">
+        <svg class="icon" aria-hidden="true"><use href="#menu"></use></svg>
+      </button>
+      <div class="navigation-links" id="navigation-links">
+        <a class="nav-link is-active" href="#about">About</a>
+        <a class="nav-link" href="#publications">Publications</a>
+        <a class="nav-link" href="#software">Software</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a href="https://jianshu93.github.io/blog/" target="_blank" rel="noopener">Blog <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+        <a class="nav-cv" href="site-assets/Jianshu_Zhao_CV.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#file-text"></use></svg> CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-layout">
+    <aside class="profile" aria-label="Jianshu Zhao profile">
+      <img class="profile-photo" src="site-assets/profile.jpg" alt="Jianshu Zhao" width="216" height="216" fetchpriority="high">
+      <h1>Jianshu Zhao</h1>
+      <p class="profile-title">Computational Microbiologist</p>
+      <p class="profile-institution">University of California, <br>San Diego</p>
+      <p class="profile-appointment">Postdoctoral research, 2024&ndash;2026</p>
+      <div class="profile-location"><svg class="icon" aria-hidden="true"><use href="#map-pin"></use></svg> San Diego, California</div>
+      <div class="social-links" aria-label="Professional profiles">
+        <a class="icon-button" href="mailto:jiz322@ucsd.edu" aria-label="Email Jianshu Zhao" data-tooltip="Email"><svg class="icon" aria-hidden="true"><use href="#mail"></use></svg></a>
+        <a class="icon-button" href="https://scholar.google.com/citations?user=XFhxv0gAAAAJ&amp;hl=en" aria-label="Google Scholar" data-tooltip="Google Scholar" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#graduation-cap"></use></svg></a>
+        <a class="icon-button" href="https://github.com/jianshu93" aria-label="GitHub profile" data-tooltip="GitHub" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#code-xml"></use></svg></a>
+        <a class="icon-button" href="https://orcid.org/0000-0002-2586-3852" aria-label="ORCID profile" data-tooltip="ORCID" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#fingerprint"></use></svg></a>
+      </div>
+      <a class="cv-download" href="site-assets/Jianshu_Zhao_CV.pdf" download><svg class="icon" aria-hidden="true"><use href="#download"></use></svg> Download CV <span>PDF</span></a>
+    </aside>
+
+    <main id="main">
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <p class="eyebrow">Algorithms &amp; microbial life</p>
+        <h2 id="about-title">Biography</h2>
+        <div class="biography">
+          <p>I am a computational microbiologist developing algorithms and open-source software for <strong>large-scale genomics, metagenomics, and microbiome analysis</strong>. I work at the intersection of probabilistic data structures, high-performance computing, and microbial ecology.</p>
+          <p>My research turns large biological datasets into tractable scientific questions. I develop methods for genome search, phylogenetic community comparisons, and biological network embedding, including <a href="https://github.com/jianshu93/DartUniFrac" target="_blank" rel="noopener">DartUniFrac</a>, <a href="https://github.com/jianshu93/gsearch" target="_blank" rel="noopener">GSearch</a>, and <a href="https://gitlab.com/Jianshu_Zhao/annembed" target="_blank" rel="noopener">Annembed</a>. I also study microbial populations through long-read metagenomics and genome-resolved ecology.</p>
+          <p>I received my Ph.D. in Bioinformatics from <a href="https://www.gatech.edu/" target="_blank" rel="noopener">Georgia Tech</a> in 2024, following an M.S. at Tsinghua University. My postdoctoral research at <a href="https://ucsd.edu/" target="_blank" rel="noopener">UC San Diego</a> (2024&ndash;2026) focused on scalable methods for microbiome and genomic analysis. Much of my software is written in Rust.</p>
+        </div>
+        <div class="about-details">
+          <div>
+            <h3>Research Interests</h3>
+            <ul class="interest-list">
+              <li>Probabilistic data structures &amp; algorithms</li>
+              <li>Genomics &amp; long-read metagenomics</li>
+              <li>Microbiome analysis &amp; microbial ecology</li>
+              <li>Biological network embedding</li>
+              <li>High-performance scientific computing</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Education</h3>
+            <ol class="education-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#graduation-cap"></use></svg><div><strong>Ph.D. in Bioinformatics</strong><span>Georgia Institute of Technology</span><time>2020&ndash;2024</time></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#graduation-cap"></use></svg><div><strong>M.S. in Environmental Science<br>and Engineering</strong><span>Tsinghua University</span><time>2016&ndash;2019</time></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#graduation-cap"></use></svg><div><strong>B.S. in Environmental Science</strong><span>Nanjing Agricultural University</span><time>2012&ndash;2016</time></div></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="content-section" aria-labelledby="publications-title">
+        <div class="section-heading">
+          <h2 id="publications-title">Publications</h2>
+          <a class="quiet-link" href="site-assets/publications.bib" download><svg class="icon" aria-hidden="true"><use href="#download"></use></svg> BibTeX</a>
+        </div>
+        <p class="section-note"><strong>*</strong> First or co-first author.</p>
+        <div class="publication-controls">
+          <div class="segmented-control" role="group" aria-label="Publication selection">
+            <button type="button" data-view="selected" aria-pressed="true">Selected</button>
+            <button type="button" data-view="all" aria-pressed="false">All papers <span>20</span></button>
+          </div>
+          <div class="filter-row">
+            <label class="search-field"><svg class="icon" aria-hidden="true"><use href="#search"></use></svg><input id="publication-search" type="search" placeholder="Search publications" aria-label="Search publications" autocomplete="off"></label>
+            <label class="select-field"><span class="sr-only">Publication year</span><select id="publication-year" aria-label="Publication year"><option value="all">All years</option></select></label>
+            <label class="select-field"><span class="sr-only">Publication type</span><select id="publication-type" aria-label="Publication type"><option value="all">All types</option><option value="journal">Journal articles</option><option value="preprint">Preprints</option></select></label>
+          </div>
+        </div>
+        <p id="publication-count" class="result-count" role="status" aria-live="polite"></p>
+        <div id="publication-list" class="publication-list"></div>
+        <noscript><p>The complete publication list is available in the <a href="site-assets/Jianshu_Zhao_CV.pdf">CV</a> and <a href="site-assets/publications.bib">BibTeX file</a>.</p></noscript>
+      </section>
+
+      <section id="software" class="content-section" aria-labelledby="software-title">
+        <div class="section-heading"><h2 id="software-title">Research Software</h2><a class="quiet-link" href="https://github.com/jianshu93" target="_blank" rel="noopener">GitHub <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></div>
+        <div class="software-list">
+          <article class="software-item"><span class="software-index">01</span><div><h3><a href="https://github.com/jianshu93/DartUniFrac" target="_blank" rel="noopener">DartUniFrac <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></h3><p>Scalable phylogenetic comparisons for megascale microbiome datasets.</p><span class="software-field">Microbiome analysis</span></div><a class="software-paper" href="https://doi.org/10.1038/s41587-026-03260-8" target="_blank" rel="noopener">Nature Biotechnology <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></article>
+          <article class="software-item"><span class="software-index">02</span><div><h3><a href="https://github.com/jianshu93/gsearch" target="_blank" rel="noopener">GSearch <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></h3><p>Fast genome search combining k-mer hashing and approximate nearest-neighbor graphs.</p><span class="software-field">Genome informatics</span></div><a class="software-paper" href="https://doi.org/10.1093/nar/gkae609" target="_blank" rel="noopener">Nucleic Acids Research <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></article>
+          <article class="software-item"><span class="software-index">03</span><div><h3><a href="https://gitlab.com/Jianshu_Zhao/annembed" target="_blank" rel="noopener">Annembed <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></h3><p>Efficient graph embedding and dimensionality reduction for large biological datasets.</p><span class="software-field">Biological data analysis</span></div><a class="software-paper" href="https://doi.org/10.1093/nargab/lqae172" target="_blank" rel="noopener">NAR Genomics and Bioinformatics <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></article>
+          <article class="software-item"><span class="software-index">04</span><div><h3><a href="https://github.com/jianshu93/bindash-rs" target="_blank" rel="noopener">BinDash-rs <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></h3><p>MinHash-based methods for fast genome search and comparison.</p><span class="software-field">Sequence comparison</span></div><a class="software-paper" href="https://doi.org/10.1101/2024.03.13.584875" target="_blank" rel="noopener">bioRxiv <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></article>
+        </div>
+        <details class="more-software">
+          <summary>More software &amp; libraries <svg class="icon" aria-hidden="true"><use href="#chevron-down"></use></svg></summary>
+          <div class="software-links">
+            <a href="https://github.com/jianshu93/dartminhash-rs" target="_blank" rel="noopener">DartMinHash</a><a href="https://github.com/jianshu93/TurboANI" target="_blank" rel="noopener">TurboANI</a><a href="https://github.com/jianshu93/lash" target="_blank" rel="noopener">LASH</a><a href="https://gitlab.com/Jianshu_Zhao/graphembed" target="_blank" rel="noopener">GraphEmbed</a><a href="https://github.com/jianshu93/aeon" target="_blank" rel="noopener">Granne</a><a href="https://github.com/jianshu93/rust-diskann" target="_blank" rel="noopener">Rust-DiskANN</a><a href="https://crates.io/crates/exaloglog" target="_blank" rel="noopener">ExaLogLog</a><a href="https://github.com/jianshu93/fastcover" target="_blank" rel="noopener">FastCover</a><a href="https://github.com/jianshu93/SuperBit" target="_blank" rel="noopener">SuperBits</a><a href="https://github.com/jianshu93/adas" target="_blank" rel="noopener">Adas</a><a href="https://github.com/jianshu93/bindashtree" target="_blank" rel="noopener">Bindashtree</a><a href="https://github.com/jianshu93/EMDUniFrac-rs" target="_blank" rel="noopener">EMDUniFrac</a><a href="https://github.com/jianshu93/fpcoa" target="_blank" rel="noopener">fpcoa</a>
+          </div>
+          <h4>Contributions</h4>
+          <div class="software-links"><a href="https://crates.io/crates/ultraloglog" target="_blank" rel="noopener">UltraLogLog</a><a href="https://github.com/sile/succparen" target="_blank" rel="noopener">succparen</a><a href="https://github.com/scikit-bio/scikit-bio" target="_blank" rel="noopener">Scikit-bio</a><a href="https://github.com/zhaoxiaofei/bindash" target="_blank" rel="noopener">BinDash</a></div>
+        </details>
+      </section>
+
+      <section id="presentations" class="content-section" aria-labelledby="presentations-title">
+        <h2 id="presentations-title">Presentations &amp; Posters</h2>
+        <ol class="presentation-list">
+          <li><time>2024</time><div><h3>Promiscuous and unbiased recombination underlies the sequence-discrete species of the SAR11 lineage in the deep ocean</h3><p>Poster &middot; ASM Microbe &middot; Atlanta, USA</p></div></li>
+          <li><time>2023</time><div><h3>High-performance parallel and concurrent programming for bioinformatics and computational biology</h3><p>Poster &middot; International Summer School on High Performance Computing &middot; Atlanta, USA</p></div></li>
+          <li><time>2022</time><div><h3>Time-series metagenomics enables quantification of the rare biosphere to natural disturbances</h3><p>Poster &middot; ASM Microbe &middot; Washington, DC, USA</p></div></li>
+        </ol>
+      </section>
+
+      <section id="contact" class="content-section contact-section" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <a class="contact-email" href="mailto:jiz322@ucsd.edu"><svg class="icon" aria-hidden="true"><use href="#mail"></use></svg> jiz322@ucsd.edu</a>
+        <p>San Diego, California, USA</p>
+        <div class="contact-links"><a href="https://scholar.google.com/citations?user=XFhxv0gAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a><a href="https://github.com/jianshu93" target="_blank" rel="noopener">GitHub <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a><a href="https://orcid.org/0000-0002-2586-3852" target="_blank" rel="noopener">ORCID <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></div>
+      </section>
+      <footer class="site-footer"><span>&copy; 2026 Jianshu Zhao</span><a href="#about">Back to top <svg class="icon tiny" aria-hidden="true"><use href="#arrow-up"></use></svg></a></footer>
+    </main>
+  </div>
+
+  <dialog id="citation-dialog" aria-labelledby="citation-title">
+    <div class="dialog-header"><h2 id="citation-title">Cite this paper</h2><button class="icon-button" id="close-citation" type="button" aria-label="Close citation"><svg class="icon" aria-hidden="true"><use href="#x"></use></svg></button></div>
+    <p id="citation-paper-title"></p>
+    <pre id="citation-text" tabindex="0"></pre>
+    <div class="dialog-actions"><button type="button" class="primary-button" id="copy-citation"><svg class="icon" aria-hidden="true"><use href="#copy"></use></svg><span>Copy BibTeX</span></button><button type="button" class="secondary-button" id="download-citation"><svg class="icon" aria-hidden="true"><use href="#download"></use></svg>Download .bib</button></div>
+    <p class="citation-feedback" id="citation-feedback" role="status" aria-live="polite"></p>
+  </dialog>
+</body>
+</html>

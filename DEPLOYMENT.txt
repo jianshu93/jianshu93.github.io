@@ -1,0 +1,45 @@
+Jianshu Zhao academic homepage
+
+This is a complete static website, populated from the updated CV. The public
+homepage address is https://jianshu93.github.io/ and the existing blog remains
+at https://jianshu93.github.io/blog/. The blog is served by a separate repository.
+
+VIEW THE WEBSITE
+Open index.html in a web browser. No server, framework, or account is needed
+to view this package. Publication search, filters, and citations run locally.
+Copying a citation may require localhost or HTTPS; downloading a .bib works
+without clipboard permissions.
+
+GITHUB PAGES
+Repository: https://github.com/jianshu93/jianshu93.github.io
+The existing default branch is master. Upload index.html, styles.css, site.js,
+the site-assets directory, and .nojekyll to the repository root. Keep the blog
+repository unchanged.
+
+In Settings > Pages, use Deploy from a branch, master, /(root).
+If Pages already uses that source, pushing the files updates the homepage.
+The .nojekyll file makes GitHub publish the static files directly.
+Official instructions:
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+FUTURE CHANGES
+- Biography, education, profile text, software, and contact: index.html.
+- Colors, fonts, and responsive layout: styles.css.
+- Portrait: replace site-assets/profile.jpg.
+- Downloadable CV: replace site-assets/Jianshu_Zhao_CV.pdf.
+- Bibliography: edit site-assets/publications.bib.
+
+After editing the bibliography, run npm install once in this directory,
+then npm run update-publications. This uses Citation.js to parse standard
+BibTeX and regenerate site-assets/publications.js. Commit both bibliography
+files. Visitors do not need Node.js and the site does not build on GitHub.
+
+The first/co-first author stars are read from the BibTeX notes/keywords.
+The selected-paper keys, code links, and short research summaries can be
+adjusted in scripts/update-publications.mjs before running it.
+
+CONTENT AND ASSETS
+Research content and dates: Jianshu Zhao's updated CV.
+Portrait: Jianshu Zhao's existing public GitHub profile image.
+Icons: Lucide, under its ISC license (site-assets/ICONS-LICENSE.txt).
+No analytics, tracking, external font requests, or remote runtime dependencies.
