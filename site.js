@@ -217,19 +217,71 @@
     }
   }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
   document.querySelectorAll("main > section").forEach(section => observer.observe(section));
+  const carousel = document.querySelector(".research-carousel");
   const hnswFrame = document.querySelector(".hnsw-demo iframe");
-  if (hnswFrame) {
+  if (carousel && hnswFrame) {
+    const slides = [...carousel.querySelectorAll(".research-slide")];
+    const controls = carousel.querySelector(".research-controls");
+    const slideButtons = [...controls.querySelectorAll("[data-slide-to]")];
+    const rotationButton = controls.querySelector(".research-rotation");
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    let slideIndex = 0;
+    let rotationPaused = reducedMotion.matches;
+    let carouselInView = false;
+    let rotationTimer;
+    let animationVisible = false;
     const sendVisibility = () => {
       const bounds = hnswFrame.getBoundingClientRect();
+      const visible = !document.hidden && !hnswFrame.closest("[hidden]") && bounds.height > 0 && bounds.bottom > 76 && bounds.top < innerHeight;
       hnswFrame.contentWindow?.postMessage({
         type: "hnsw-visibility",
-        visible: !document.hidden && bounds.bottom > 76 && bounds.top < innerHeight
+        visible,
+        autoplay: visible && !animationVisible
       }, new URL(hnswFrame.src).origin);
+      animationVisible = visible;
     };
-    const frameObserver = new IntersectionObserver(sendVisibility, { threshold: 0 });
-    frameObserver.observe(hnswFrame);
+    const scheduleRotation = () => {
+      clearTimeout(rotationTimer);
+      if (!rotationPaused && carouselInView && !document.hidden) {
+        rotationTimer = setTimeout(() => showSlide(slideIndex + 1), 8000);
+      }
+    };
+    const showSlide = next => {
+      slideIndex = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => { slide.hidden = index !== slideIndex; });
+      slideButtons.forEach((button, index) => button.setAttribute("aria-pressed", String(index === slideIndex)));
+      sendVisibility();
+      scheduleRotation();
+    };
+    const updateRotationButton = () => {
+      rotationButton.textContent = rotationPaused ? "Play" : "Pause";
+      rotationButton.setAttribute("aria-label", rotationPaused ? "Start automatic slide rotation" : "Pause automatic slide rotation");
+    };
+    slideButtons.forEach(button => button.addEventListener("click", () => showSlide(Number(button.dataset.slideTo))));
+    controls.querySelectorAll("[data-slide-step]").forEach(button => button.addEventListener("click", () => showSlide(slideIndex + Number(button.dataset.slideStep))));
+    rotationButton.addEventListener("click", () => {
+      rotationPaused = !rotationPaused;
+      updateRotationButton();
+      scheduleRotation();
+    });
+    reducedMotion.addEventListener("change", event => {
+      rotationPaused = event.matches;
+      updateRotationButton();
+      scheduleRotation();
+    });
+    const frameObserver = new IntersectionObserver(entries => {
+      carouselInView = entries[0].isIntersecting;
+      sendVisibility();
+      scheduleRotation();
+    }, { threshold: 0 });
+    frameObserver.observe(carousel);
     hnswFrame.addEventListener("load", sendVisibility);
-    document.addEventListener("visibilitychange", sendVisibility);
+    document.addEventListener("visibilitychange", () => {
+      sendVisibility();
+      scheduleRotation();
+    });
+    controls.hidden = false;
+    updateRotationButton();
   }
   render();
 })();

@@ -27,6 +27,11 @@ FUTURE CHANGES
 - Biography, education, profile text, software, and contact: index.html.
 - Colors, fonts, and responsive layout: styles.css.
 - Portrait: replace site-assets/profile-lab.jpg.
+- Featured research: DartUniFrac artwork first, then the GSearch HNSW animation.
+  The slides rotate every eight seconds; the controls also allow manual selection
+  and pausing rotation. HNSW plays automatically when its slide becomes visible.
+  Replace site-assets/dartunifrac-cover.jpg to update the artwork. Slide links and
+  captions are in index.html; the rotation interval is in site.js.
 - Downloadable CV: replace site-assets/Jianshu_Zhao_CV.pdf.
 - Bibliography: edit site-assets/publications.bib.
 
@@ -42,6 +47,7 @@ adjusted in scripts/update-publications.mjs before running it.
 CONTENT AND ASSETS
 Research content and dates: Jianshu Zhao's updated CV.
 Portrait: the laboratory photograph supplied by Jianshu Zhao.
+DartUniFrac artwork: the cover image supplied by Jianshu Zhao.
 Icons: Lucide, under its ISC license (site-assets/ICONS-LICENSE.txt).
 Rust artwork: see site-assets/RUST-ARTWORK-LICENSES.txt.
 HNSW animation: adapted from the supplied hnsw_search.html, using Feder 1.0.7
