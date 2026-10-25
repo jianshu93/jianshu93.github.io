@@ -8,7 +8,7 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
     body { color: #fff; font-family: Helvetica, Arial, sans-serif; }
-    #stage { position: fixed; width: 800px; height: 480px; transform-origin: top left; }
+    #stage { position: fixed; width: 620px; height: 480px; transform-origin: top left; }
     #loading { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; padding: 24px; color: #c7d4df; font-size: 13px; }
     #loading[hidden] { display: none; }
     #loading a { display: block; color: #d7eaff; margin-top: 12px; }
@@ -34,9 +34,9 @@
     let suspended = false;
 
     const resize = () => {
-      const scale = Math.min(innerWidth / 800, innerHeight / 480);
+      const scale = Math.min(innerWidth / 620, innerHeight / 480);
       stage.style.transform = "scale(" + scale + ")";
-      stage.style.left = ((innerWidth - 800 * scale) / 2) + "px";
+      stage.style.left = ((innerWidth - 620 * scale) / 2) + "px";
       stage.style.top = ((innerHeight - 480 * scale) / 2) + "px";
     };
     const syncVisibility = () => {
@@ -69,7 +69,7 @@
       if (timer?.isPlaying) timer.stop();
       const frame = structuredClone(data.frames[frameIndex]);
       renderer = new FederView(frame, {
-        width: 800,
+        width: 620,
         height: 480,
         canvasScale: 2,
         staticPanelWidth: 190

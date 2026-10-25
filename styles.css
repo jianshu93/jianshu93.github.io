@@ -80,7 +80,7 @@ section { scroll-margin-top: 103px; }
 .research-media { display: block; width: 67.5%; height: auto; aspect-ratio: 5 / 3; margin-inline: auto; border: 0; }
 .research-art { width: 34.65%; aspect-ratio: auto; }
 .research-art img { display: block; width: 100%; height: auto; }
-.hnsw-demo iframe { background: #000; }
+.hnsw-demo iframe { width: 50%; aspect-ratio: 31 / 24; background: #000; }
 .research-slide figcaption { margin-top: 9px; color: var(--muted); font-size: 11px; line-height: 1.6; text-align: center; }
 .research-controls { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 8px; }
 .research-controls button { min-height: 30px; padding: 3px 8px; border: 0; border-bottom: 1px solid transparent; background: transparent; color: var(--muted); font-size: 11px; line-height: 1.4; }

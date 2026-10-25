@@ -30,6 +30,8 @@ FUTURE CHANGES
 - Featured research: DartUniFrac artwork first, then the GSearch HNSW animation.
   The slides rotate every eight seconds; the controls also allow manual selection
   and pausing rotation. HNSW plays automatically when its slide becomes visible.
+  HNSW uses 50% of the content width and a 620 x 480 viewport, removing the
+  empty right margin while retaining all graph layers, text, and controls.
   The artwork is the unmodified original JPEG, including its embedded color
   profile: site-assets/DartUniFrac_cover_image_small_new_nojournal.jpg.
   Preserve the original file without resizing or recompressing it. Slide links and
