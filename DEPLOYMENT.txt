@@ -30,7 +30,9 @@ FUTURE CHANGES
 - Featured research: DartUniFrac artwork first, then the GSearch HNSW animation.
   The slides rotate every eight seconds; the controls also allow manual selection
   and pausing rotation. HNSW plays automatically when its slide becomes visible.
-  Replace site-assets/dartunifrac-cover.jpg to update the artwork. Slide links and
+  The artwork is the unmodified original JPEG, including its embedded color
+  profile: site-assets/DartUniFrac_cover_image_small_new_nojournal.jpg.
+  Preserve the original file without resizing or recompressing it. Slide links and
   captions are in index.html; the rotation interval is in site.js.
 - Downloadable CV: replace site-assets/Jianshu_Zhao_CV.pdf.
 - Bibliography: edit site-assets/publications.bib.
