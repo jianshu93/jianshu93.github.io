@@ -270,6 +270,47 @@ window.CV_PUBLICATIONS = [
     "bibtex": "@article{aton2025scikitbio,\n\tauthor = {Aton, Matthew and McDonald, Daniel and Ca{\\~ n}ardo Alastuey, Jorge and Azom, Raeed and Batra, Paarth and Bezshapkin, Valentyn and Bolyen, Evan and Cagle, Alexander and Caporaso, J. Gregory and Debelius, Justine W. and Gorlick, Kestrel and Hamsanipally, Nirmitha and Hunger, Lars and Keluskar, Aryan and Liao, Disen and Lu, Yang Young and Navas-Molina, Jose A. and Pitman, Anders and Rideout, Jai Ram and Sazonov, Anton and Sathappan, Bharath and Schwarzberg Lipson, Karen and Sfiligoi, Igor and Tapo, Chris and V{\\' a}zquez-Baeza, Yoshiki and Wu, Zijun and Xu, Zhenjiang Zech and Ye, Mingsong Sam and Zhao, Jianshu and Knight, Rob and Morton, James T. and Zhu, Qiyun},\n\tjournal = {Nature Methods},\n\tdoi = {10.1038/s41592-025-02981-z},\n\tnumber = {2},\n\tyear = {2026},\n\tmonth = {2},\n\tpages = {274--276},\n\ttitle = {Scikit-bio: a fundamental {Python} library for biological omic data analysis},\n\tvolume = {23},\n}"
   },
   {
+    "id": "zhao2026turboani",
+    "title": "Homology-aware average nucleotide identity estimation at scale with TurboANI",
+    "author": [
+      {
+        "given": "Jianshu",
+        "family": "Zhao"
+      },
+      {
+        "given": "Daniel",
+        "family": "McDonald"
+      },
+      {
+        "given": "Lucas",
+        "family": "Patel"
+      },
+      {
+        "given": "Claire",
+        "family": "Wang"
+      },
+      {
+        "given": "Antonio",
+        "family": "Gonzalez"
+      },
+      {
+        "given": "Rob",
+        "family": "Knight"
+      }
+    ],
+    "venue": "bioRxiv",
+    "year": 2026,
+    "volume": "",
+    "page": "",
+    "DOI": "10.64898/2026.11.05.764740",
+    "firstAuthor": true,
+    "preprint": true,
+    "selected": true,
+    "summary": "Fast, homology-aware average nucleotide identity estimation using SIMD seeding, compact indexing, and lightweight chaining.",
+    "code": "https://github.com/jianshu93/TurboANI",
+    "bibtex": "@article{zhao2026turboani,\n\tauthor = {Zhao, Jianshu and McDonald, Daniel and Patel, Lucas and Wang, Claire and Gonzalez, Antonio and Knight, Rob},\n\tjournal = {bioRxiv},\n\tdoi = {10.64898/2026.11.05.764740},\n\tyear = {2026},\n\tmonth = {11},\n\tnote = {Preprint. Jianshu Zhao is first author},\n\ttitle = {Homology-aware average nucleotide identity estimation at scale with {TurboANI}},\n\turl = {https://www.biorxiv.org/content/10.64898/2026.11.05.764740v1},\n\thowpublished = {https://www.biorxiv.org/content/10.64898/2026.11.05.764740v1},\n}"
+  },
+  {
     "id": "din2026longread",
     "title": "Genome-resolved ecology and evolution of the microbiome enabled by quantitative long-read metagenomics",
     "author": [
