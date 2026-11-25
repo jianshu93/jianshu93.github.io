@@ -5,8 +5,9 @@ import "@citation-js/plugin-bibtex";
 
 const assets = new URL("../site-assets/", import.meta.url);
 const source = await readFile(new URL("publications.bib", assets), "utf8");
-const selected = new Set(["zhao2026turboani", "zhao2026dartunifrac", "din2026longread", "zhao2025rarebiosphere", "zhao2025sar11", "zhao2024gsearch", "zhao2024annembed", "zhao2025gigascale"]);
+const selected = new Set(["zhao2026lash", "zhao2026turboani", "zhao2026dartunifrac", "din2026longread", "zhao2025rarebiosphere", "zhao2025sar11", "zhao2024gsearch", "zhao2024annembed", "zhao2025gigascale"]);
 const codes = {
+  zhao2026lash: "https://github.com/jianshu93/lash",
   zhao2026turboani: "https://github.com/jianshu93/TurboANI",
   zhao2026dartunifrac: "https://github.com/jianshu93/DartUniFrac",
   zhao2024gsearch: "https://github.com/jianshu93/gsearch",
@@ -16,6 +17,7 @@ const codes = {
   aton2025scikitbio: "https://github.com/scikit-bio/scikit-bio"
 };
 const summaries = {
+  zhao2026lash: "Space-efficient genome distance estimation with UltraLogLog, ExaLogLog, and HyperMinHash.",
   zhao2026turboani: "Fast, homology-aware average nucleotide identity estimation using SIMD seeding, compact indexing, and lightweight chaining.",
   zhao2026dartunifrac: "Scalable phylogenetic community comparisons for megascale microbiome analysis.",
   zhao2025rarebiosphere: "Testing ecological theory using population genomes reconstructed from metagenomes.",
